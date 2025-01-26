@@ -1,6 +1,6 @@
 /**
- * hello.cu
- * A basic helloworld from CUDA
+ * scalar_add.cu
+ * Adding scalars in CUDA
  */
 
 #include <stdio.h>
@@ -32,7 +32,7 @@ int main(){
 	cudaMemcpy(d_a, &a, size, cudaMemcpyHostToDevice);
 	cudaMemcpy(d_b, &b, size, cudaMemcpyHostToDevice);
 
-	vec_add<<<16,1,1>>>(d_a, d_b, d_c);
+	vec_add<<<1,16,1>>>(d_a, d_b, d_c);
 
 	// D2H Copies
 	cudaMemcpy(&c, d_c, size, cudaMemcpyDeviceToHost);
