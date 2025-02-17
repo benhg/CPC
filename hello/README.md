@@ -6,3 +6,5 @@ Does what it says on the tin
 
 nvcc hello.cu -o hello
 ./hello
+
+This code famously doesn't do anything at all.
